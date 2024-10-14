@@ -1,4 +1,5 @@
 const formElement = document.querySelector("form");
+const login = document.getElementById("login");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -10,6 +11,13 @@ function handleSubmit(event) {
 
   formElement.reset();
 }
+
+document.addEventListener("keydown", function (event) {
+  console.log(event);
+  if (event.key === "Enter") {
+    formElement.submit();
+  }
+});
 
 formElement.addEventListener("submit", handleSubmit);
 
